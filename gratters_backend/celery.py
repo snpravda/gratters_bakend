@@ -35,11 +35,11 @@ app.conf.beat_schedule = {
         'schedule': 30,
         'args': ()
     },
-    'test': {
-        'task': 'work',
-        'schedule': 10,
-        'args': ()
-    },
+    # 'test': {
+    #     'task': 'work',
+    #     'schedule': 10,
+    #     'args': ()
+    # },
 }
 
 #celery -A gratters_backend worker --loglevel=info
