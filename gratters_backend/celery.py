@@ -25,7 +25,7 @@ app.autodiscover_tasks()
 app.conf.broker_url = BASE_REDIS_URL
 
 # this allows you to schedule items in the Django admin.
-app.conf.beat_scheduler = 'django_celery_beat.schedulers.DatabaseScheduler'
+#app.conf.beat_scheduler = 'django_celery_beat.schedulers.DatabaseScheduler'
 
 app.autodiscover_tasks()
 
@@ -33,6 +33,11 @@ app.conf.beat_schedule = {
     'send-messages': {
         'task': 'send_messages',
         'schedule': 30,
+        'args': ()
+    },
+    'test': {
+        'task': 'work',
+        'schedule': 10,
         'args': ()
     },
 }

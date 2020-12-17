@@ -7,7 +7,7 @@ from gratters_backend.telethon import *
 
 # Create your views here.
 
-class GratterView(generics.ListCreateAPIView):
+class GrattersView(generics.ListCreateAPIView):
     serializer_class = GratterSerializer
     queryset = Gratter.objects.all()
     filter_class  = GratterFilter
@@ -24,3 +24,10 @@ class GratterView(generics.ListCreateAPIView):
     #     # client.send_message(person_to, message)
     #     client.disconnect()
     #     return self.create(request, *args, **kwargs)
+
+
+class SingleGratterView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = GratterSerializer
+    queryset = Gratter.objects.all()
+    parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser)
+    renderer_classes = (renderers.JSONRenderer,)
