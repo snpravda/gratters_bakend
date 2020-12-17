@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_swagger',
+    'django_celery_beat',
     'django_filters',
     'gratters.apps.GrattersConfig',
 ]
@@ -146,6 +147,12 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# CELERY settings
+
+
+# REDIS related settings
 
 
 # Static files (CSS, JavaScript, Images)
