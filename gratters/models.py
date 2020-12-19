@@ -5,7 +5,7 @@ from django.db import models
 
 class Gratter(models.Model):
     owner = models.CharField(max_length=100)
-    title = models.CharField(max_length=100, default="Congratulations!")
+    title = models.CharField(max_length=100, blank=True)
     person_to = models.CharField(max_length=100)
     message = models.TextField()
     date = models.DateField()
